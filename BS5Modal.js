@@ -1,11 +1,47 @@
-//Generates a Boostrap Modal Element / Node
+/**
+  * BS5ModalJS - A JavaScript library for creating
+  * Bootstrap 5 Modals in your document.
+  *
+  * This removes the hassle of writing the Bootstrap 5
+  * HTML elements manually in your document. This class
+  * will create those elements for you automatically.
+  *
+  * @author Eleazer Jr. Ababa
+  * @contact eleazer@ababagaming.com
+  * 
+  * @prerequisite
+  * The main bootstrap 5 framework must be referred by
+  * your document.
+  * @link https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css
+  * 
+  * You may also include the javascript library of
+  * bootstrap 5 if you prefer using javascript to
+  * toggle the modals
+  * @link https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js
+  *
+  * @prop {HTMLnode} modalElement       contains the modal element
+  *
+*/
 class BSModal {
-//id - Element ID of the Modal
-//title - Title of the Modal
-//message - Message of the Modal
-//callBack - function to call when the confirm button of modal is clicked
+    
+    /**
+      * @constructs
+      * The constructor takes care of creating the
+      * nodes/elements and automatically prepends to
+      * your document's <body>
+      *
+      * @param {string} id              unique identifier of the modal
+      * @param {string} title           this will be the header of the modal
+      * @param {string} message         the main message of the modal
+      *                                 accepts html values
+      * @param {function} callBack      a function that will be called when
+      *                                 the user clicks confirm button in the
+      *                                 modal
+    */
+    
     constructor(id, title, message, callBack) {
-        //parent element
+        
+        //the main container of the element (parent)
         let pElem = document.createElement("div");
         pElem.classList.add("modal");
         pElem.classList.add("fade");
@@ -63,6 +99,8 @@ class BSModal {
         mConfirmBtn.setAttribute("type", "button");
         mConfirmBtn.setAttribute("data-bs-dismiss", "modal");
         mConfirmBtn.innerText = "Confirm";
+        
+        //execute the callback function once user clicks confirm button
         mConfirmBtn.addEventListener("click", callBack);
                     
         //ASSEMBLE THE NODES
