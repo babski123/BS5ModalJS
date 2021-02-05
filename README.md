@@ -28,23 +28,23 @@ The parameters must be in the following order:
     - A callback function to be executed when the user clicks the confirm button of the modal. This is where you should execute the necessary actions when the user clicks confirm.
     
 #### Properties
-- modalElement {node}
-  A reference to the created modalElement.
-- elementId {string}
-  Stores the unique identifier of the modal element.
-- elementTitle {string}
-  Stores the title of the modal element.
-- elementMessage {string}
-  Stores the message of the modal element.
+##### modalElement {node}
+    A reference to the created modal element.
+##### elementId {string}
+    Stores the unique identifier of the modal element.
+##### elementTitle {string}
+    Stores the title of the modal element.
+##### elementMessage {string}
+    Stores the message of the modal element.
   
 #### Methods
 ##### toggleButton(innerText, classes)
   Creates and returns a `<button>` element that toggles the modal when clicked. You must append this element manually in your document to be visible.
   ###### Parameters
   Parameters must be in order:
-  1. innerText {string} optional
+  1. `innerText` {string} optional<br>
     The text displayed in the button. Default is "Submit".
-  2. classes {string} optional
+  2. `classes` {string} optional<br>
     Specifies the class of the button. Can accept space-separated class names.
     Default is "btn btn-btn-outline-primary".
   
@@ -56,15 +56,18 @@ let myModal = new BSModal("myModal", "Test Modal", "Hi. I am a test modal! Are y
     console.log("Modal is working!");
 });
 ```
-The code above generates modal element that becomes the first child of your document's body. Now, let's create a toggle button.
+The code above generates modal element that becomes the first child of your document's `body`. Now, let's create a toggle button.
 ```
 let toggleBtn = myModal.toggleButton("Try me!");
 ```
-Then, just append the `toggleBtn` element anywhere in the document. In this example, we'll append it to the document's body.
+Then, just append the `toggleBtn` element anywhere in the document. In this example, we'll append it to the document's `body`.
 ```
 document.body.appendChild(toggleBtn);
 ```
+#### Live Demo
+Here is a [live demo](http://ababagaming.com/bs5modaldemo.html) of this class in action
 
 ### Author
-Eleazer Jr. Ababa<br>
+Written by: Eleazer Jr. Ababa<br>
 Email: eleazer@ababagaming.com
+Website: http://ababagaming.com
