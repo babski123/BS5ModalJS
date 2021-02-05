@@ -64,10 +64,10 @@ Then, just append the `toggleBtn` element anywhere in the document. In this exam
 ```
 document.body.appendChild(toggleBtn);
 ```
-#### Live Demo
-Here is a [live demo](http://ababagaming.com/bs5modaldemo.html) of this class in action
+### Live Demo
+Here is a [live demo](http://ababagaming.com/bs5modal_demo.html) of this class in action
 
 ### Author
 Written by: Eleazer Jr. Ababa<br>
-Email: eleazer@ababagaming.com
+Email: eleazer@ababagaming.com<br>
 Website: http://ababagaming.com
