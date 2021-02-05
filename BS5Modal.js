@@ -1,5 +1,5 @@
 /**
-  * BS5ModalJS - A JavaScript library for creating
+  * BS5ModalJS - A JavaScript class for creating
   * Bootstrap 5 Modals in your document.
   *
   * This removes the hassle of writing the Bootstrap 5
@@ -19,11 +19,14 @@
   * toggle the modals
   * @link https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js
   *
-  * @prop {HTMLnode} modalElement       contains the modal element
-  *
 */
-class BSModal {
-    
+
+
+/**
+  * @class {class} BSModal
+  * this is the main class of BS5Modal
+*/
+class BSModal { 
     /**
       * @constructs
       * The constructor takes care of creating the
@@ -38,7 +41,6 @@ class BSModal {
       *                                 the user clicks confirm button in the
       *                                 modal
     */
-    
     constructor(id, title, message, callBack) {
         
         //the main container of the element (parent)
@@ -125,8 +127,58 @@ class BSModal {
                     
         //finally prepend the modal element (pElem) to the document's body
         document.body.prepend(pElem);
-                    
+        
+        
+        /**
+          * @prop {node} modalElement
+          * this property holds the element
+          * of the modal
+        */
         this.modalElement = pElem;
-                    
-        }
+        
+        /**
+          * @prop {string} elementId
+          * this property stores the element's
+          * id attribute value
+        */
+        this.elementId = id;
+        
+        /**
+          * @prop {string} elementTitle
+          * this property stores the element's
+          * title
+        */
+        this.elementTitle = title;
+        
+        /**
+          * @prop {string} elementMessage
+          * this property stores the element's
+          * message
+        */
+        this.elementMessage = message;     
+        
     }
+    
+    
+    /**
+      * @method toggleButton
+      * Create and returns a bootstrap 5 button that toggles
+      * the modal when you click it
+      *
+      * @param {string} innerText       the innerText propery of the button
+      *                                 default is "Submit"
+    */
+    
+    toggleButton(innerText = "Submit") {
+        
+        let button = document.createElement("button");
+        button.setAttribute("type", "button");
+        button.setAttribute("data-bs-toggle", "modal");
+        button.setAttribute("data-bs-target", "#" + this.elementId);
+        button.innerText = innerText;
+        
+        return button;
+        
+    }
+    
+}
