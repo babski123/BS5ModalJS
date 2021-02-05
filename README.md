@@ -1,7 +1,7 @@
 # BS5ModalJS
 A JavaScript class for creating Bootstrap 5 Modals
 ## Why BS5ModalJS?
-BS5ModalJS removes the hassle of writing the bootstrap 5 html elements manually in your document. It will create those elements for you automatically when you instantiate it and prepends to your document's `<body>`. Useful if you intend to add modals throughout your website.
+BS5ModalJS removes the hassle of writing the bootstrap 5 modal html elements manually in your document. It will create those elements for you automatically when you instantiate it and prepends to your document's `<body>`. Useful if you intend to add modals throughout your website.
 ## Prerequisite
 In order for BS5ModalJS to work, you must refer bootstrap 5 main framework in your document.
 ```
@@ -64,6 +64,9 @@ Then, just append the `toggleBtn` element anywhere in the document. In this exam
 ```
 document.body.appendChild(toggleBtn);
 ```
+### Important Notes
+BS5ModalJS works only with Bootstrap v5.0
+
 ### Live Demo
 Here is a [live demo](http://ababagaming.com/bs5modal_demo.html) of this class in action
 
