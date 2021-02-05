@@ -41,7 +41,7 @@ class BSModal {
       *                                 the user clicks confirm button in the
       *                                 modal
     */
-    constructor(id, title, message, callBack) {
+    constructor(id, title, message, callBack = null) {
         
         //the main container of the element (parent)
         let pElem = document.createElement("div");
@@ -167,14 +167,21 @@ class BSModal {
       *
       * @param {string} innerText       the innerText propery of the button
       *                                 default is "Submit"
+      * @param {string} classes         specifies the class name of the button
+      *                                 if multiple, should be separated by spaces
+      *                                 use this parameter to design the button
+      *                                 default is "btn btn-outline-primary"
+      *
+      * @return {node} button           the generated button element
     */
     
-    toggleButton(innerText = "Submit") {
+    toggleButton(innerText = "Submit", classes = "btn btn-outline-primary") {
         
         let button = document.createElement("button");
         button.setAttribute("type", "button");
         button.setAttribute("data-bs-toggle", "modal");
         button.setAttribute("data-bs-target", "#" + this.elementId);
+        button.className = classes;
         button.innerText = innerText;
         
         return button;
