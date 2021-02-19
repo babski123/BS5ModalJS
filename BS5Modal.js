@@ -188,4 +188,17 @@ class BSModal {
         
     }
     
+    /**
+      * @method staticBackdrop
+      * Call this method to set the modal's backdrop to static
+      * This means that clicking outside the modal
+      * will not dismiss the modal
+    */
+    
+    staticBackdrop()
+    {
+        this.modalElement.setAttribute("data-bs-backdrop", "static");
+        this.modalElement.setAttribute("data-bs-keyboard", "false");
+    }
+    
 }

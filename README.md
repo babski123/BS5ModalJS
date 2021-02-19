@@ -68,7 +68,7 @@ document.body.appendChild(toggleBtn);
 BS5ModalJS works only with Bootstrap v5.0
 
 ### Live Demo
-Here is a [live demo](http://ababagaming.com/bs5modal_demo.html) of this class in action
+Here is a [live demo](http://ababagaming.com/bs5modal_demo.html) of this class in action.
 
 ### Author
 Written by: Eleazer Jr. Ababa<br>
