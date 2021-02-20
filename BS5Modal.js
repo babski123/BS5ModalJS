@@ -105,7 +105,7 @@ class BSModal {
         //execute the callback function once user clicks confirm button
         mConfirmBtn.addEventListener("click", callBack);
                     
-        //ASSEMBLE THE NODES
+        //ASSEMBLE THE ELEMENTS
         //append the footer buttons to the footer
         mFooter.appendChild(mCancelBtn);
         mFooter.appendChild(mConfirmBtn);
@@ -131,8 +131,8 @@ class BSModal {
         
         /**
           * @prop {node} modalElement
-          * this property holds the element
-          * of the modal
+          * this property is a reference to the
+          * modal's element
         */
         this.modalElement = pElem;
         
@@ -155,7 +155,28 @@ class BSModal {
           * this property stores the element's
           * message
         */
-        this.elementMessage = message;     
+        this.elementMessage = message;
+        
+        /**
+          * @prop {node} modalDialog
+          * a reference to the modal
+          * dialog element
+        */
+        this.modalDialog = mDialog;
+        
+        /** @prop {node} cancelBtn
+          * a reference to the modal's cancel button element
+          * change the innerText property of this element
+          * if you want to change the cancel button's text
+        */
+        this.cancelBtn = mCancelBtn;
+        
+        /** @prop {node} confirmBtn
+          * a reference to the modal's confirm button element
+          * change the innerText property of this element
+          * if you want to change the confirm button's text
+        */
+        this.confirmBtn = mConfirmBtn;        
         
     }
     
@@ -199,6 +220,49 @@ class BSModal {
     {
         this.modalElement.setAttribute("data-bs-backdrop", "static");
         this.modalElement.setAttribute("data-bs-keyboard", "false");
+    }
+    
+    /**
+      * @method scrollableDialog
+      * Call this method to turn the modal's dialog into a scrollable
+      * dialog. This means that the header and footer will not
+      * scroll with the modal's content
+    */
+    scrollableDialog()
+    {
+        this.modalDialog.classList.add("modal-dialog-scrollable");
+    }
+    
+    /**
+      * @method verticallyCentered
+      * Call this method to center the modal vertically
+    */
+    verticallyCentered()
+    {
+        this.modalDialog.classList.add("modal-dialog-centered");
+    }
+    
+    /**
+      * @method changeSize
+      * Change the size of the modal
+      * @param {string} size        size (xl, lg, sm)
+      * xl -> extra large 1140px
+      * lg -> large 800px
+      * sm -> small 300px
+    */
+    changeSize(size)
+    {
+        this.modalDialog.classList.add("modal-" + size);
+    }
+    
+    /**
+      * @method removeAnimation
+      * Call this method to remove the animation of the modal
+      * Modal will simply appear instead of fade to view
+    */
+    removeAnimation()
+    {
+        this.modalElement.classList.remove("fade");
     }
     
 }

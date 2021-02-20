@@ -36,7 +36,14 @@ The parameters must be in the following order:
     Stores the title of the modal element.
 ##### elementMessage {string}
     Stores the message of the modal element.
-  
+##### modalDialog {node}
+    A reference to the modal dialog element.
+##### cancelBtn {node}
+    A reference to the modal's cancel button element.
+    You can change the cancel button's text by changing the `innerText` property of this element
+##### confirmBtn {node}
+    A reference to the modal's confirm button element.
+    You can change the confirm button's text by changing the `innerText` property of this element
 #### Methods
 ##### toggleButton(innerText, classes)
   Creates and returns a `<button>` element that toggles the modal when clicked. You must append this element manually in your document to be visible.
@@ -47,7 +54,23 @@ The parameters must be in the following order:
   2. `classes` {string} optional<br>
     Specifies the class of the button. Can accept space-separated class names.
     Default is "btn btn-btn-outline-primary".
-  
+##### staticBackdrop()
+  Call this method if you don't want the modal to dismiss when clicking the background.
+##### scrollableDialog()
+  Call this method to turn the modal's dialog into a scorallable dialog.
+  This means that the header and footer will not scroll with the modal's content.
+##### verticallyCentered()
+  Call this method to center the modal vertically
+##### changeSize(size)
+  Call this method if you want to change the modal's size.
+  ###### Parameters
+  `size` {string} required
+  * xl - Extra large 1140px
+  * lg - Large 800px
+  * sm - Small 300px
+##### removeAnimation()
+  Removes the animation (fade effect). The modal will simply appear / disappear insteading of fading to view.
+
 
 #### Example
 Here is an example of instantiating the class.
@@ -73,4 +96,4 @@ Here is a [live demo](http://ababagaming.com/bs5modal_demo.html) of this class i
 ### Author
 Written by: Eleazer Jr. Ababa<br>
 Email: eleazer@ababagaming.com<br>
-Website: http://ababagaming.com
+Website: http://ababagaming.com	
